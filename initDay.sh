@@ -1,7 +1,7 @@
 #!/bin/bash
 
 solutionPlaceHolder="
-const { fileRowsToArray } = require('../util');
+const { fileRowsToArray, sum } = require('../util');
 
 const p1 = (input) => {
     return 'Solution not yet implemented.';
@@ -12,10 +12,10 @@ const p2 = (input) => {
 }
 
 module.exports = (input1, input2) => {
-    if (input1) {
+    if (input1 != null) {
         console.log('Sol 1:', p1(input1));
     }
-    if (input2) {
+    if (input2 != null) {
         console.log('Sol 2:', p2(input2));
     }
 }
@@ -36,5 +36,5 @@ if [[ $1 =~ ^[0-9]+$ ]]; then
   fi
 else
   # Print an error message if no number was provided
-  echo "Please provide a number as the first argument."
+  echo "Please provide day number as the first argument."
 fi
