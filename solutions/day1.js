@@ -1,4 +1,4 @@
-const { fileRowsToArray } = require('../util');
+const { fileRowsToArray, sum } = require('../util');
 
 const p1 = (input) => {
     const inventories = input.split('\r\n\r\n');
@@ -12,7 +12,7 @@ const p2 = (input) => {
     const mealsPerInv = inventories.map((inv) => fileRowsToArray(inv).map((s) => parseInt(s)));
     const caloriesPerInv = mealsPerInv.map((meals) => meals.reduce((acc, val) => (acc + val), 0));
     const sortedByCalories = caloriesPerInv.sort((a, b) => b - a);
-    return sortedByCalories.slice(0, 3).reduce((acc, cur) => (acc + cur), 0);
+    return sum(sortedByCalories.slice(0, 3));
 }
 
 module.exports = (input1, input2) => {

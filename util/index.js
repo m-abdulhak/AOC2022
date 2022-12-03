@@ -8,11 +8,14 @@ const getInput = (day, puzzle = 1) => {
     return data;
 }
 
-const fileRowsToArray = (rows) => {
-    return rows.split('\r\n');
+const fileRowsToArray = (rows, splitChar) => {
+    return rows.split('\r\n').map((r) => splitChar ? r.split(splitChar) : r);
 }
+
+const sum = (nums) => nums.reduce((acc, num) => (acc + num), 0);
 
 module.exports = {
     getInput,
-    fileRowsToArray
+    fileRowsToArray,
+    sum
 };
