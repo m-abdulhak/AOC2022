@@ -1,0 +1,12 @@
+{
+  "name": "aoc2022",
+  "version": "1.0.0",
+  "description": "Advent of Code 2022",
+  "main": "index.js",
+  "scripts": {
+    "solve": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammed Abdullhak",
+  "license": "ISC"
+}
