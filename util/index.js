@@ -4,12 +4,12 @@ const path = require('path');
 const getInput = (day, puzzle = 1) => {
     const fileRelativePath = `./input/day${day}_${puzzle}.txt`;
     const filePath = path.join(process.cwd(), fileRelativePath);
-    const data = fs.readFileSync(filePath, 'utf8');
+    const data = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : null;
     return data;
 }
 
-const fileRowsToArray = (rows, splitChar) => {
-    return rows.split('\r\n').map((r) => splitChar ? r.split(splitChar) : r);
+const fileRowsToArray = (rows, splitChar, mapper = (r) => (r)) => {
+    return rows.split('\r\n').map((r) => (splitChar ? r.split(splitChar) : r)).map(mapper);
 }
 
 const sum = (nums) => nums.reduce((acc, num) => (acc + num), 0);

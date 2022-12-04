@@ -14,8 +14,8 @@ const itemPriority = (c) => {
 }
 
 const p1 = (input) => {
-    let rows = fileRowsToArray(input);
-    rows = rows.map((r) => [r.slice(0, r.length / 2), r.slice(r.length / 2)]);
+    const mapper = (r) => [r.slice(0, r.length / 2), r.slice(r.length / 2)];
+    let rows = fileRowsToArray(input, null, mapper);
 
     const errors = [];
     for (const r of rows) {

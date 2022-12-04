@@ -10,14 +10,16 @@ const rangesOverlap = (r1, r2) => {
 }
 
 const p1 = (input) => {
-    const rows = fileRowsToArray(input, ',').map((r) => r.map((p) => p.split('-').map((c) => parseInt(c))));
+    const mapper = (r) => r.map((p) => p.split('-').map((c) => parseInt(c)));
+    const rows = fileRowsToArray(input, ',', mapper);
     const contained = rows.map((r) => rangesContained(r[0], r[1]));
     const res = contained.filter((v) => v == true).length;
     return res;
 }
 
 const p2 = (input) => {
-    const rows = fileRowsToArray(input, ',').map((r) => r.map((p) => p.split('-').map((c) => parseInt(c))));
+    const mapper = (r) => r.map((p) => p.split('-').map((c) => parseInt(c)));
+    const rows = fileRowsToArray(input, ',', mapper);
     const contained = rows.map((r) => rangesOverlap(r[0], r[1]));
     const res = contained.filter((v) => v == true).length;
     return res;

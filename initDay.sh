@@ -4,19 +4,28 @@ solutionPlaceHolder="
 const { fileRowsToArray, sum } = require('../util');
 
 const p1 = (input) => {
-    return 'Solution not yet implemented.';
+    const mapper = (r) => r;
+    const rows = fileRowsToArray(input, null, mapper);
+
+    const res = rows.length;
+    return res;
 }
 
 const p2 = (input) => {
-    return 'Solution not yet implemented.';
+    const mapper = (r) => r;
+    const rows = fileRowsToArray(input, null, mapper);
+
+    const res = rows.length;
+    return res;
 }
 
 module.exports = (input1, input2) => {
     if (input1 != null) {
         console.log('Sol 1:', p1(input1));
     }
-    if (input2 != null) {
-        console.log('Sol 2:', p2(input2));
+    const in2 = input2?.length ? input2 : input1;
+    if (in2 != null) {
+        console.log('Sol 2:', p2(in2));
     }
 }
 "
