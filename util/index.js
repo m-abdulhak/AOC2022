@@ -14,6 +14,8 @@ const fileRowsToArray = (rows, splitChar, mapper = (r) => (r)) => {
 
 const sum = (nums) => nums.reduce((acc, num) => (acc + num), 0);
 
+const l = (...args) => console.log(...args);
+
 const groupArrElems = (arr, gCount) => arr.reduce((acc, cur, indx) => {
     if (indx % gCount === 0) {
       acc.push([cur]);
@@ -28,5 +30,6 @@ module.exports = {
     getInput,
     fileRowsToArray,
     sum,
+    l,
     groupArrElems
 };
