@@ -2,7 +2,7 @@
 const { fileRowsToArray, sum } = require('../util');
 
 const p1 = (input) => {
-    let [sCrates, steps] = input.split('\r\n\r\n').map((s) => fileRowsToArray(s));
+    let [sCrates, steps] = input.split('\n\n').map((s) => fileRowsToArray(s));
     
     colIndx = sCrates.slice(sCrates.length - 1)[0].split('').reduce((acc, cur, i) => {
         if (cur !== ' ') {
@@ -51,7 +51,7 @@ const p1 = (input) => {
 }
 
 const p2 = (input) => {
-    let [sCrates, steps] = input.split('\r\n\r\n').map((s) => fileRowsToArray(s));
+    let [sCrates, steps] = input.split('\n\n').map((s) => fileRowsToArray(s));
     
     colIndx = sCrates.slice(sCrates.length - 1)[0].split('').reduce((acc, cur, i) => {
         if (cur !== ' ') {

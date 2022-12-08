@@ -9,7 +9,7 @@ const getInput = (day, puzzle = 1) => {
 }
 
 const fileRowsToArray = (rows, splitChar, mapper = (r) => (r)) => {
-    return rows.split('\r\n').map((r) => (splitChar ? r.split(splitChar) : r)).map(mapper);
+    return rows.split('\n').map((r) => (splitChar ? r.split(splitChar) : r)).map(mapper);
 }
 
 const sum = (nums) => nums.reduce((acc, num) => (acc + num), 0);

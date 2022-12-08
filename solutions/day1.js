@@ -1,14 +1,14 @@
 const { fileRowsToArray, sum } = require('../util');
 
 const p1 = (input) => {
-    const inventories = input.split('\r\n\r\n');
+    const inventories = input.split('\n\n');
     const mealsPerInv = inventories.map((inv) => fileRowsToArray(inv).map((s) => parseInt(s)));
     const caloriesPerInv = mealsPerInv.map((meals) => meals.reduce((acc, val) => (acc + val), 0));
     return Math.max(...caloriesPerInv);
 }
 
 const p2 = (input) => {
-    const inventories = input.split('\r\n\r\n');
+    const inventories = input.split('\n\n');
     const mealsPerInv = inventories.map((inv) => fileRowsToArray(inv).map((s) => parseInt(s)));
     const caloriesPerInv = mealsPerInv.map((meals) => meals.reduce((acc, val) => (acc + val), 0));
     const sortedByCalories = caloriesPerInv.sort((a, b) => b - a);
