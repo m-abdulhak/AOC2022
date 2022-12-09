@@ -1,9 +1,13 @@
 #!/bin/bash
 
 solutionPlaceHolder="
-const { fileRowsToArray, sum } = require('../util');
+const { fileRowsToArray, sum, l } = require('../util');
+
+const testIn = 
+``;
 
 const p1 = (input) => {
+    input = testIn;
     const mapper = (r) => r;
     const rows = fileRowsToArray(input, null, mapper);
 
@@ -12,6 +16,7 @@ const p1 = (input) => {
 }
 
 const p2 = (input) => {
+    input = testIn;
     const mapper = (r) => r;
     const rows = fileRowsToArray(input, null, mapper);
 
