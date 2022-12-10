@@ -4,7 +4,7 @@ solutionPlaceHolder="
 const { fileRowsToArray, sum, l } = require('../util');
 
 const testIn = 
-``;
+`test`;
 
 const p1 = (input) => {
     input = testIn;
